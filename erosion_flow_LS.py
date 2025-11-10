@@ -76,7 +76,7 @@ class LSarea(QgsProcessingAlgorithm):
             'VAL_MEAN': QgsProcessing.TEMPORARY_OUTPUT,
             'WEIGHT_LOSS': QgsProcessing.TEMPORARY_OUTPUT
         }
-        outputs['FlowAccumulationTopdown'] = processing.run('saga:flowaccumulationtopdown', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        outputs['FlowAccumulationTopdown'] = processing.run('sagang:flowaccumulationtopdown', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
         results['FlowAccumulation'] = outputs['FlowAccumulationTopdown']['FLOW']
 
         feedback.setCurrentStep(2)
