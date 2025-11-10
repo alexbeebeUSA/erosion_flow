@@ -52,7 +52,7 @@ class RUSLE(QgsProcessingAlgorithm):
             'Ls': QgsProcessing.TEMPORARY_OUTPUT,
             'Slope': parameters['LSArea']
         }
-        outputs['LsMitasova'] = processing.run('script:LS Mitasova', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        outputs['LsMitasova'] = processing.run('ErosionFlow:LSArea', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
         results['LSArea'] = outputs['LsMitasova']['Ls']
 
         feedback.setCurrentStep(1)
